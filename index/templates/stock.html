@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+{% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.company }}</a>
+              <small class="text-muted">{{ post.package }}</small><br>
+                <small class="text-muted">{{ post.purpose }}</small>
+
+            </div>
+            <h2><a class="article-title" href="{{ url_for('post', medicine_id=post.id) }}">{{ post.name }}</a></h2>
+              <h2>{{ post.dose }}</h2>
+            <p class="article-content">{{ post.price }} L.E</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock %}
